@@ -1,0 +1,30 @@
+FileDescriptions_VideoObservations
+
+"VideoBehaviorsDatasheet.xlsx" - this is the data sheet of observations recorded while observing underwater video footage within the culvert. Each row is one event. There can be multiple events per video file.
+Column definitions:
+- "VideoFileName" = file name of the video clip observed.
+- "FootageDate" = date video file was recorded
+- "Species" = abbreviation for fish taxa of this event. RH = river herring; LMB = largemouth bass; SF = sunfish; CP = chain pickerel, YP = yellow perch.
+- "Pass" = 1 if fish passes through the culvert, 0 if it returns in the direction that it entered the culvert from.
+- "EventTime" = time of day in 24hr format that the event occurred. 
+- "TurtleAvailable" = 1 if turtle is present inside of the culvert and available to potentially strike at prey (i.e. not currently consuming previously captured prey or with head above water breathing at the time of the event).
+- "Attacked" = 1 if turtle attempted to attack the fish, 0 if no attempt made. 
+- "CatchSuccess" = 1 if turtle successfully captures the fish being attacked, 0 if turtle does not successfully capture fish.
+- "SchoolSize" = number of herring detected in the together in the culvert at the time of the event
+- "NumHerringPass" = number of herring within the school observed passing through the culvert at the time of the event.
+- "NumHerringReject" = number of herring within the school observed departing in the direction that they had originally approached from.
+- "PhotoFileName" = file name of photo taken for this event to be analyzed for cross-sectional positioning
+
+
+"TurtlesPresenceTable.csv" - table summarizing periods of time that the underwater action camera was deployed and periods of time that turtles were observed residing within the culvert.
+Column definitions:
+- "StartTime" = date and time of the start of this record
+- "EndTime = date and time of the end of this record
+- "Event" = identifies if underwater camera was deployed (i.e. "On") or not deployed (i.e. "Off") during this time window. 
+- "TurtlesPresentBeforeStart" = number of turtles that were observed inside the culvert at the time that the camera was first deployed.
+- "TurtlesPresent" = number of turtles occupying the inside of the culvert during this time period.
+
+
+
+
+"QuantifyingCountsFromVideo.R" - This R script summarizes the number, duration, etc. of fish and turtle behaviors observed from underwater culvert video footage.
