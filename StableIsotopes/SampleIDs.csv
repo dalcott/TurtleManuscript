@@ -1,0 +1,139 @@
+SampleID,SpeciesName,CommonName,Taxa,Tissue,WaterbodyType,Location,Comments,CollectionDate,PIT,Type,Type2
+1,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Herring Pond,NA,2016-06-04,226000506281,Plasma,CulvertTurtle
+2,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Herring Pond,NA,2016-06-04,226000506281,RBC,CulvertTurtle
+3,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,Landlocked,Slough Pond,NA,2016-06-04,NA,Plasma,LandLockedTurtle
+4,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,Landlocked,Slough Pond,NA,2016-06-04,NA,RBC,LandLockedTurtle
+5,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Herring Pond,NA,2016-06-05,226000506236,Plasma,Uncertain
+6,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Herring Pond,NA,2016-06-05,226000506236,RBC,Uncertain
+7,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Bound Brook Island Rd,NA,2017-05-05,226000506246,Plasma,Uncertain
+8,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Bound Brook Island Rd,NA,2017-05-05,226000506246,RBC,Uncertain
+9,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Higgins Pond,Tagged in 2016 but no blood draw that year,2017-05-06,226000506267,Plasma,CulvertTurtle
+10,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Higgins Pond,Tagged in 2016 but no blood draw that year,2017-05-06,226000506267,RBC,CulvertTurtle
+11,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Higgins Pond,NA,2017-05-06,226000506269,Plasma,CulvertTurtle
+11b,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Higgins Pond,NA,2017-05-06,226000506269,RBC,CulvertTurtle
+12,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Higgins Pond,NA,2017-05-16,226000506201,Plasma,Uncertain
+13,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Higgins Pond,NA,2017-05-16,226000506201,RBC,Uncertain
+14,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Higgins Pond,NA,2017-05-25,226000506274,Plasma,CulvertTurtle
+15,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Higgins Pond,NA,2017-05-25,226000506274,RBC,CulvertTurtle
+16,Chelydra serpentina,Common snapping turtle,Snapping turtle,Whole blood,HR-Connected,Williams Pond,NA,2017-06-12,769125,Whole,Non-culvertTurtle
+17,Chelydra serpentina,Common snapping turtle,Snapping turtle,Whole blood,Landlocked,Snow Pond,NA,2017-06-12,226000506262,Whole,LandLockedTurtle
+18,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Williams Pond,NA,2017-06-14,769154,Plasma,Non-culvertTurtle
+19,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Williams Pond,NA,2017-06-14,769154,RBC,Non-culvertTurtle
+20,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Slough Pond,NA,2017-06-16,769197,Plasma,LandLockedTurtle
+21,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Slough Pond,NA,2017-06-16,769197,RBC,LandLockedTurtle
+22,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,Landlocked,Slough Pond,NA,2017-06-17,769102,Plasma,LandLockedTurtle
+23,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,Landlocked,Slough Pond,NA,2017-06-17,769119,RBC,LandLockedTurtle
+24,Chelydra serpentina,Common snapping turtle,Snapping turtle,Plasma,HR-Connected,Williams Pond,NA,2017-06-17,769119,Plasma,Non-culvertTurtle
+25,Chelydra serpentina,Common snapping turtle,Snapping turtle,RBC,HR-Connected,Williams Pond,NA,2017-06-17,769119,RBC,Non-culvertTurtle
+26,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+27,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+28,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+29,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+30,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+31,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-13,NA,RiverHerring,Herring
+32,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+33,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+34,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+35,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+36,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+37,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+38,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+39,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+40,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+41,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+42,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+43,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+44,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+45,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+46,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+47,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+48,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+49,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+50,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+51,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+52,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+53,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+54,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+55,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+56,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-12,NA,RiverHerring,Herring
+57,Najas spp.,Naiad,Vegetation,Whole,HR-Connected,Higgins Pond,NA,2016-06-12,NA,FloatingAlgae,HR-ConnectedVeg
+58,Nymphaea spp.,Hear shaped lilly,Vegetation,Leaf,HR-Connected,Higgins Pond,NA,2016-06-12,NA,AquaticPlant,HR-ConnectedVeg
+59,Nymphaea spp.,White water lilly,Vegetation,Leaf,HR-Connected,Higgins Pond,NA,2016-06-12,NA,AquaticPlant,HR-ConnectedVeg
+60,NA,Unknown,Vegetation,RootedPlant,HR-Connected,Higgins Pond,NA,2016-06-12,NA,AquaticPlant,HR-ConnectedVeg
+61,Various filamentous spp.,Filamentous algae,Vegetation,Whole,HR-Connected,Higgins Pond,NA,2016-06-12,NA,FloatingAlgae,HR-ConnectedVeg
+62,Various filamentous spp.,Filamentous algae,Vegetation,Whole,Landlocked,Slough Pond,NA,2016-06-12,NA,FloatingAlgae,LandlockedVeg
+63,Nymphaea spp.,White water lilly,Vegetation,Leaf,Landlocked,Slough Pond,NA,2016-06-12,NA,AquaticPlant,LandlockedVeg
+64,Nyphoides cordata,lesser duckweed,Vegetation,Whole,Landlocked,Slough Pond,NA,2016-06-12,NA,FloatingAlgae,LandlockedVeg
+65,Nymphaea spp.,Hear shaped lilly,Vegetation,Leaf,Landlocked,Slough Pond,NA,2016-06-12,NA,AquaticPlant,LandlockedVeg
+66,Utricularia spp.,bladderwort,Vegetation,Whole,Landlocked,Slough Pond,NA,2016-06-12,NA,FloatingAlgae,LandlockedVeg
+67,Myriophyllum spp.,Variable milfoil,Vegetation,Whole,Landlocked,Slough Pond,NA,2016-06-12,NA,FloatingAlgae,LandlockedVeg
+68,Najas spp.,Najas,Vegetation,Whole,HR-Connected,Williams Pond,NA,2017-06-13,NA,FloatingAlgae,HR-ConnectedVeg
+69,Nymphaea spp.,Heart shaped lilly,Vegetation,Leaf,HR-Connected,Higgins Pond,NA,2017-06-13,NA,AquaticPlant,HR-ConnectedVeg
+70,Various filamentous spp.,Filamentous algae,Vegetation,Whole,HR-Connected,Higgins Pond,NA,2017-06-13,NA,FloatingAlgae,HR-ConnectedVeg
+71,Najas spp.,Najas,Vegetation,Whole,HR-Connected,Higgins Pond,NA,2017-06-13,NA,FloatingAlgae,HR-ConnectedVeg
+72,Nymphaea spp.,Heart shaped lilly,Vegetation,Leaf,HR-Connected,Williams Pond,NA,2017-06-13,NA,AquaticPlant,HR-ConnectedVeg
+73,Nuphar variegata,Oval lilly,Vegetation,Leaf,HR-Connected,Williams Pond,NA,2017-06-13,NA,AquaticPlant,HR-ConnectedVeg
+74,Nymphaea spp.,White water lilly,Vegetation,Leaf,HR-Connected,Higgins Pond,NA,2017-06-13,NA,AquaticPlant,HR-ConnectedVeg
+75,Nyphoides cordata,lesser duckweed,Vegetation,Whole,Landlocked,Slough Pond,NA,2017-06-23,NA,FloatingAlgae,LandlockedVeg
+76,NA,Narrow leaf,Vegetation,Whole,Landlocked,Slough Pond,NA,2017-06-23,NA,AquaticPlant,LandlockedVeg
+77,NA,Narrow leaf,Vegetation,Whole,Landlocked,Snow Pond,NA,2017-06-23,NA,AquaticPlant,LandlockedVeg
+78,Nymphaea spp.,White water lilly,Vegetation,Leaf,Landlocked,Snow Pond,NA,2017-06-23,NA,AquaticPlant,LandlockedVeg
+79,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+80,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+81,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+82,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+83,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+84,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+85,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+86,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+87,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+88,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+89,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+90,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+91,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-05-31,NA,RiverHerring,Herring
+92,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+93,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+94,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+95,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+96,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+97,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+98,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+99,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+100,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+101,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+102,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+103,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+104,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+105,Alosa spp.,River herring,River herring,Muscle,HR-Connected,DownstreamMigrant,NA,2017-06-01,NA,RiverHerring,Herring
+106,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+107,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+108,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+109,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+110,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+111,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+112,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+113,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+114,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+115,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+116,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+117,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+118,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+119,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+120,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+121,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+122,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+123,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+124,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+125,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-24,NA,RiverHerring,Herring
+126,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+127,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+128,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+129,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+130,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+131,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+132,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+133,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+134,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+135,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+136,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
+137,Alosa spp.,River herring,River herring,Muscle,HR-Connected,UpstreamMigrant,NA,2017-04-28,NA,RiverHerring,Herring
