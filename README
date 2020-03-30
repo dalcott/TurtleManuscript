@@ -1,1 +1,13 @@
-Place holder readme file
+This repository contains the data and R code necessary to reproduce the results presented in 
+"Wait and snap: Common snapping turtles prey on migratory fish at crossing culverts." by Alcott et al. 
+submitted to Biology Letters for peer review.
+
+R scripts use relative directory referencing to import and export data/figures. Therefore, it is best if this entire repository is downloaded
+to a local directory of your choice, maintaining downstream organization of the sub-directories within this repository.
+
+The analyses are split into 3 parts corresponding with different analyses presented in the manuscript:
+1. Fish positioning - data and analyses for fish cross-sectional position within culverts from underwater videography.
+2. Stable isotopes - data and analyses for C13 stable isotope analyses of snapping turtle blood samples, river herring muscle tissue, and aquatic vegetation
+3. Video Observations - data and analyses for quantifying the frequency of various behaviors that were reported from underwater videography
+
+More detailed information provided within each folder.
