@@ -1,0 +1,38 @@
+FileDescriptions-FishPositioning
+
+/Data/Raw sub folder contains one .csv file of pixel coordinates for each screen capture recorded of fish within the culvert.
+Each file contains 5 rows of X and Y pixel values. The rows correspond to the following points of interest on the image:
+Row 1: Top-left corner of culvert
+Row 2: Top-right corner of culvert
+Row 3: Bottom-left corner of culvert
+Row 4: Bottom-right corner of culvert
+Row 5: Approximate center-of-mass of fish.
+
+Each file also contains the columns: Area, Mean, Min, and Max which are automically included by ImageJ software but are not relevant to this study.
+
+
+/Data/Normalized sub folder contains the  "FishAndCulvertCornerCoordinates_Normalized.csv".
+This is the output from "FishPositioning_SetUp_NormalizingPixelCoordinates.R" R script. 
+This data table consists of the normalized pixel coordinates of the 5 points of interest recorded from each screen captured image described above.
+Column definitions:
+- "Name" = name of the point of interest (e.g. "TopLeft" corner of culvert, center-of-mass of "Fish").
+- "X" = normalized X-coordinate value
+- "Y" = normalized Y-coordinate value
+- "FileName2" = file name of image with file extension removed (i.e. ".jpg" or ".csv" is removed)
+- "TurtleAvailable" = "NoTurtle" if no turtle is present in the culvert at the time of this event; "Turtle" if a turtle was present at the time of the event.
+- "Species" = abbreviation for fish species that this row is measuring (RH = river herring, LMB = largemouth bass, SF = sunfish, CP = chain pickerel, YP = yellow perch)
+- "Direction" = direction fish was swimming through the culvert relative to stream flow direction.
+- "CatchSuccess" = whether or not turtle successfully captured the fish. "NA" if no attempt was made, 0 if unsuccessful predation attempt, 1 if successful capture.
+
+
+
+"FishPositioning_FinalAnalyses.R" - this R script reads in the normalized pixel coordinates and performs multivariate and univariate normality tests
+for each fish category (i.e. river herring and non-herring/resident fish)
+
+
+"FishPositioning_SetUp_NormalizingPixelCoordinates.R" - this R script reads in raw pixel coordinates from each screen capture image and normalizes
+the coordinates to correct for camera tilt, camera position, relative distance of fish from camera, etc. for more appropriate comparisons.
+This script creats and exports the data table in file "Data/Normalized/FishAndCulvertCornerCoordinates_Normalized.csv"
+
+
+"FishPositioningPlots.R" - this R script creates Figure 2 from the manuscript which is then formatted to its final version in "Plots/FormattingFigure2.ppx"
