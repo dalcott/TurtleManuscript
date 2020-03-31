@@ -220,7 +220,7 @@ p = ggarrange(p1, p2, p3, p4, nrow=2, ncol=2)
 p # need to manually add labels for FishType and TurtleAvailable (ugly if done through ggarrange)
 # also added lines + to divide the 4 quadrants
 
-#ggsave("Plots/Figure2.png", width = 12, height = 10, units = "in", dpi = 500)
+#ggsave("Plots/Figure1.png", width = 12, height = 10, units = "in", dpi = 500)
 
 
 
