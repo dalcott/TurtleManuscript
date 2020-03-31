@@ -7,7 +7,6 @@ Row 2: Top-right corner of culvert
 Row 3: Bottom-left corner of culvert
 Row 4: Bottom-right corner of culvert
 Row 5: Approximate center-of-mass of fish.
-
 Each file also contains the columns: Area, Mean, Min, and Max which are automically included by ImageJ software but are not relevant to this study.
 
 
@@ -26,8 +25,7 @@ Column definitions:
 
 
 
-"FishPositioning_FinalAnalyses.R" - this R script reads in the normalized pixel coordinates and performs multivariate and univariate normality tests
-for each fish category (i.e. river herring and non-herring/resident fish)
+"FishPositioning_FinalAnalyses.R" - this R script reads in the normalized pixel coordinates and performs multivariate and univariate normality tests for each fish category (i.e. river herring and non-herring/resident fish)
 
 
 "FishPositioning_SetUp_NormalizingPixelCoordinates.R" - this R script reads in raw pixel coordinates from each screen capture image and normalizes
@@ -35,4 +33,4 @@ the coordinates to correct for camera tilt, camera position, relative distance o
 This script creats and exports the data table in file "Data/Normalized/FishAndCulvertCornerCoordinates_Normalized.csv"
 
 
-"FishPositioningPlots.R" - this R script creates Figure 2 from the manuscript which is then formatted to its final version in "Plots/FormattingFigure2.ppx"
+"FishPositioningPlots.R" - this R script creates Figure 1 from the manuscript which is then formatted to its final version in "Plots/FormattingFigure1.ppx"
