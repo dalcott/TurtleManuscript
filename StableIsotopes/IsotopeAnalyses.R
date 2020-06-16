@@ -1,5 +1,4 @@
-##########################                     Isotope Analyses                           ############################
-# This script ...
+##########################                     Isotope Analyses                      #########################
 
 # checking that all required packages are installed and installing any that are missing
 list.of.packages <- c("ggplot2", "dplyr", "readxl", "rcompanion", "tidyr")
@@ -154,8 +153,19 @@ n = data.frame(n)
 n$Group = c("RiverHerring", "Vegetation", "Culvert-Plasma/Whole", "Culvert-RBC", "NonCulvAnad-Plasma", "NonCulvAnad-RBC", "Landlocked-Plasma/Whole", "Landlocked-RBC")
 n = n[c(2,1,7,8, 5,6, 3,4),] # reorder sample size order to match the order of the plot
 
+# NOTE: By default, ggplot2 geom_boxplot() uses the entire range of a group as the whisker values
+# in a boxplot with only 2 data points, instead of excluding the whiskers. Whiskers are not
+# appropriate when a data set only included 2 observations. Instead, the top and bottom of the 
+# box should take the place of the two values in the data set and the median is the value halfway
+# between those two points.
+# This is the case for the RBC fraction of the non-culvert turtle group in our data.
+# we believe visualizing this with whiskers is inappropriate. To display the data properly,
+# we need to replicate the two values in the data set before plotting
+z = filter(Isotopes, Fill == "RBC" & X == "Non-culvertTurtle") # extract the two records to be replicated
+Isotopes1 = rbind(Isotopes, z) # add extracted records for this group to double the number of records
+  # now the plot will correctly show the box without whiskers
 
-FinalPlot2 = ggplot(data = Isotopes, aes(y = Isotopes$C13, x = Isotopes$X, fill = Isotopes$Fill)) +
+FinalPlot2 = ggplot(data = Isotopes1, aes(y = Isotopes1$C13, x = Isotopes1$X, fill = Isotopes1$Fill)) +
   geom_boxplot(lwd = 0.05, position = position_dodge2(preserve = "single")) + # this line forces all boxes to be the same width and makes the factors that only have one box centered
   labs(y="\u03b4 C13", x = NULL) + # do not include an x-axis label (already group labels)
   scale_y_continuous(limits = c(-31,-17), breaks = seq(-17, -29, -2))+
@@ -177,8 +187,8 @@ FinalPlot2 = ggplot(data = Isotopes, aes(y = Isotopes$C13, x = Isotopes$X, fill 
         legend.key = element_blank())                  # remove background colour of legend keys
 FinalPlot2
 
-ggsave("Plots/Figure1.png", width = 10, height = 6, units = "in")
-
+ggsave("Plots/Figure2.jpg", width = 10, height = 6, units = "in")
+ggsave("Plots/Figure2.tiff", width = 10, height = 6, units = "in")
 
 
 
