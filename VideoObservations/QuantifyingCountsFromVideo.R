@@ -34,39 +34,40 @@ PresData$StartTime = as.POSIXct(PresData$StartTime, tz = "America/New_York")
 Cam = subset(PresData, Event != "CameraOff") # Keep anything but camera off. If turtle arrive or departure, then camera was on (in addition to camera on with no turtles present)
 Cam$StartTime = as.POSIXct(Cam$StartTime, tz = "America/New_York") # make DateTime object
 Cam$Duration = difftime(Cam$EndTime, Cam$StartTime, units = "hours") # duration of each event in hours
-sum(Cam$Duration) # 275.8 hours of camera footage recorded
-sum(subset(Cam, TurtlesPresent > 0)$Duration) #138 hours of turtles on camera (sometimes more than one turtle present)
+sum(Cam$Duration) # 115.5 hours of camera footage recorded
+sum(subset(Cam, Turtles > 0)$Duration) #31.6 hours of turtles on camera (sometimes more than one turtle present)
 
 
 
 
 
 #####   Turtle Presences    #####
-TurtlePres = filter(PresData, TurtlesPresent > 0) # only cases where at least 1 turtle is present within the culvert
+TurtlePres = filter(PresData, Turtles > 0) # only cases where at least 1 turtle is present within the culvert
 TurtlePres$EndTime = as.POSIXct(TurtlePres$EndTime, tz = "America/New_York")
 TurtlePres$Duration = difftime(TurtlePres$EndTime, TurtlePres$StartTime, units = "hours")
 
-TurtlePres$TurtleTime = ifelse(TurtlePres$TurtlesPresent > 1, TurtlePres$Duration*TurtlePres$TurtlesPresent, TurtlePres$Duration) # if there is more than one turtle in the culvert, then count the amount of time present for each turtle (i.e. if 2 turtles spend 1 hour in the culvert together, than that is 2 hours worth of turtles present in the culvert, not 1 hour)
-sum(TurtlePres$Duration) #138 hrs of turtles on video in 2016 (i.e. amount of time of footage that contains at least 1 turtle)
-sum(TurtlePres$TurtleTime) # 161.5 hrs of combined turtle occupancy time.
+TurtlePres$TurtleTime = ifelse(TurtlePres$Turtles > 1, TurtlePres$Duration*TurtlePres$Turtles, TurtlePres$Duration) # if there is more than one turtle in the culvert, then count the amount of time present for each turtle (i.e. if 2 turtles spend 1 hour in the culvert together, than that is 2 hours worth of turtles present in the culvert, not 1 hour)
+sum(TurtlePres$Duration) #31.6 hrs of turtles on video in 2016 (i.e. amount of time of footage that contains at least 1 turtle)
+sum(TurtlePres$TurtleTime) # 35.7 hrs of combined turtle occupancy time.
 
 
 # Individual number of turtle occupancies observed with camera (not including PIT data when camera was off)
 nrow(subset(Cam, Event == "TurtleArrival")) # any turtle arrival is one new occupancy
-sum(subset(Cam, TurtlesPresentBeforeStart > 0)$TurtlesPresentBeforeStart) # each turtle present before start of camera is also a new occupancy
+nrow(subset(Cam, Event == "CameraOn" & Turtles > 0)) # each turtle present before start of camera is also a new occupancy
 
-  # Toal number of individual occupancies observed with camera
-nrow(subset(Cam, Event == "TurtleArrival")) + sum(subset(Cam, TurtlesPresentBeforeStart > 0)$TurtlesPresentBeforeStart)
+# Toal number of individual occupancies observed with camera
+nrow(subset(Cam, Event == "TurtleArrival")) + nrow(subset(Cam, Event == "CameraOn" & Turtles > 0))
+# 29
 
 
 
 ## Time with 1 turtle in culvert vs time with more than 1
-Solo = filter(TurtlePres, TurtlesPresent == 1)
-Multi = filter(TurtlePres, TurtlesPresent > 1)
-sum(Solo$Duration) # total of 115 hours of one turtle alone in the culvert recorded
-sum(Multi$Duration) # total of 23 hours of more than one turtle in the culvert recorded
-115/(115+23) # 83% of the time only one turtle present
-23/(115+23) # 17% of the time more than one turtle present
+Solo = filter(TurtlePres, Turtles == 1)
+Multi = filter(TurtlePres, Turtles > 1)
+sum(Solo$Duration) # total of 27.8 hours of one turtle alone in the culvert recorded
+sum(Multi$Duration) # total of 3.8 hours of more than one turtle in the culvert recorded
+27.8/(27.8+3.8) # 88% of the time only one turtle present
+3.8/(27.8+3.8) # 12% of the time more than one turtle present
 
 
 
@@ -150,7 +151,6 @@ p2 = ggplot(data = b, aes(x = FootageDate, y = TotalFish))+
 p2 # herring plot
 p = ggarrange(p1, p2, nrow = 2, ncol=1) # make combined plot
 p
-# this shows that after we stop seeing herring, we stop seeing turtles.
 
 
 
@@ -168,24 +168,23 @@ p
 ######      Turtle Strikes      #######
 # counting number of hit and miss attempts of turtles attacking herring
 
-
 Miss = ObsData %>%
   filter(Species == "RH") %>%
   filter(CatchSuccess == 0) %>%
-  select(FootageDate, EventTime, VideoFileName, Direction, SchoolSize, Notes) %>%
+  select(FootageDate, EventTime, VideoFileName, Direction, SchoolSize, CatchSuccess) %>%
   mutate(DateTime = as.POSIXct(paste(FootageDate, EventTime, sep = " "), tz = "America/New_York"))
-# 104 recorded missed attempts.
-
+# 123 recorded missed attempts.
+  
 
 
 Hit = ObsData %>%
   filter(Species == "RH") %>%
   filter(CatchSuccess == 1) %>%
-  select(FootageDate, EventTime, VideoFileName, Direction, SchoolSize, Notes) %>%
+  select(FootageDate, EventTime, VideoFileName, Direction, SchoolSize) %>%
   mutate(DateTime = as.POSIXct(paste(FootageDate, EventTime, sep = " "), tz = "America/New_York"))
-  # 14 records of turtle capturing herring
-
-nrow(Hit)/(nrow(Hit)+nrow(Miss)) #12% catch rate. Bit better than I thought...
+  # 21 records of turtle capturing herring
+  
+nrow(Hit)/(nrow(Hit)+nrow(Miss)) #15% catch rate.
 
 
 
@@ -198,11 +197,11 @@ nrow(NoTry) - 1 # one case in this data frame the turtle's head was above water 
 
 # No Attack attempted %
 (nrow(NoTry)-1)/(nrow(Hit)+nrow(Miss)+(nrow(NoTry)-1)) 
-  # 18% of the time, turtles did not attempt to strike. 
+  # 21% of the time, turtles did not attempt to strike. 
 
 # Attack attempted %
 1 - (nrow(NoTry)-1)/(nrow(Hit)+nrow(Miss)+(nrow(NoTry)-1))
-    # 82% of the time turtles attempted an attack
+    # 80% of the time turtles attempted an attack
 
 
 
@@ -213,7 +212,7 @@ NH = ObsData %>%
   filter(Species != "RH" & TurtleAvailable == 1) # only keep non RH fish, and make sure a turtle is present
   
 sum(as.numeric(NH$Attacked)) # how many times did a turtle attempt to attack a non-RH fish?
-  # turtle never even attempts to attack a non River Herring fish
+  # turtle never even attempts to attack a non River Herring fish - UNKNOWN was a small mammal, likely a muskrat, not positively ID'd due to light availability
 
 
 
