@@ -1,0 +1,45 @@
+FileDescriptions_StableIsotopes
+
+"IsotopeAnalyses.R" - this R script performs all of the analyses of stable isotope data presented in the manuscript. It also generates Figure 2 in the manuscript
+
+"SampleIDs.csv" - this data table provides detailed biological information for each Sample ID number for each sample analyzed for C13 values.
+column definitions:
+"SampleID" - sample ID number
+"SpeciesName" - Species name
+"CommonName" - common name of organism sampled
+"Taxa" - a grouping name for samples from similar taxa
+"Tisse" - tissue collected from the specimen analyzed for C13 stable isotope analysis ("RBC" = red blood cell).
+"WaterbodyType" - type of waterbody that the specimen was collected from (i.e. a landlocked pond or somewhere with the Herring River system connected to the sea)
+"Location" - specific location that sample was collected from.
+"Comments" - comments regarding the sample.
+"CollectionDate" - Date sample was collected yyyy-mm-dd
+"PIT" - Passive Integrated Transponder telemetry tag ID number (for snapping turtles that were tagged).
+"Type" - grouping variable
+"Type2" - another grouping variable
+
+
+"StableIsotopeResults.xlsx" - C13 values for each Sample ID number.
+
+
+"CulvertTurtlesIDs.csv" - PIT tag ID numbers for those turtles that were detected occupying a culvert. 
+These individuals were classified as "culvert turtles"
+
+
+Plots/Figure2.tif - Figure 2 of the manuscript generated from StableIsotopeAnalyses.R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

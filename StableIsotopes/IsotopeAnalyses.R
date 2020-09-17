@@ -1,7 +1,8 @@
 ##########################                     Isotope Analyses                      #########################
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # set WD to folder where this script is stored
 
 # checking that all required packages are installed and installing any that are missing
-list.of.packages <- c("ggplot2", "dplyr", "readxl", "rcompanion", "tidyr")
+list.of.packages <- c("ggplot2", "dplyr", "readxl", "rcompanion", "tidyr", "ggpubr", "car")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
@@ -10,7 +11,8 @@ library(dplyr)
 library(readxl)
 library(ggplot2)
 library(rcompanion) # for scheirerRayHare test
-
+library(ggpubr)
+library(car)
 
 ####  Prep   #### 
 
@@ -27,7 +29,9 @@ CulvTurts = read.csv("CulvertTurtlesIDs.csv") # PIT tag ID numbers known to ente
 ### Bringing sample information into results table
 Isotopes = merge(Isotopes, SampleIDs, by = "SampleID")
 
-Isotopes = arrange(Isotopes, Tissue, WaterbodyType, Location)
+# Clean up data frame
+Isotopes = Isotopes %>% 
+  arrange(Tissue, WaterbodyType, Location)
 
 a = Isotopes %>% 
   filter(PIT %in% CulvTurts$PIT) %>% 
@@ -35,6 +39,10 @@ a = Isotopes %>%
   slice(1)
 # Changing the order of this factor so when plotted it will display in this order instead of alphabetical
 Isotopes$Type2 <- factor(Isotopes$Type2, levels = c("LandlockedVeg", "HR-ConnectedVeg", "Herring", "CulvertTurtle", "Non-culvertTurtle", "LandLockedTurtle", "Uncertain"))
+
+# Create subsetted data frames for specific tests
+Plants = filter(Isotopes, Taxa == "Vegetation")
+FinalTurt = filter(Isotopes, Taxa == "Snapping turtle" & Tissue != "RBC")
 
 # End Prep  ####
 
@@ -122,7 +130,6 @@ res # this compares the RBC vs. plasma values of culvert turtles for evidence of
 
 
 ######   Creating plots    ########
-library(ggpubr)
 # two-panel plot, freshwater vs marine on one side; Turtle comparison on the other. Shared y-axis
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # color blind friendly palette
 
@@ -187,8 +194,8 @@ FinalPlot2 = ggplot(data = Isotopes1, aes(y = Isotopes1$C13, x = Isotopes1$X, fi
         legend.key = element_blank())                  # remove background colour of legend keys
 FinalPlot2
 
-ggsave("Plots/Figure2.jpg", width = 10, height = 6, units = "in")
-ggsave("Plots/Figure2.tiff", width = 10, height = 6, units = "in")
+#ggsave("Plots/Figure2.jpg", width = 10, height = 6, units = "in", dpi = 600)
+#ggsave("Plots/Figure2.tiff", width = 10, height = 6, units = "in", dpi = 600)
 
 
 
@@ -275,13 +282,13 @@ ggsave("Plots/Figure2.tiff", width = 10, height = 6, units = "in")
 ### Testing the assumptions of ANOVA for Test 1
 ## Assumption #1: Experimental errors are normally distributed 
 # Shapiro-Wilks test of normality
-resids = residuals(lm(Result ~ WaterbodyType*Type, data=Plants)) # create a residuals object
+resids = residuals(lm(C13 ~ WaterbodyType*Type, data=Plants)) # create a residuals object
 shapiro.test(resids) # p = 0.081 > 0.05, fail to reject the null that errors are normally distributed
   # pass (just barely)
 
 # examine qqplot
-qqnorm(Plants$Result)
-qqline(Plants$Result)
+qqnorm(Plants$C13)
+qqline(Plants$C13)
 
 
 
@@ -290,82 +297,13 @@ qqline(Plants$Result)
   # must test for each treatment one at a time (i.e. pond type, then plant type)
 
   # Pond type equal variances test for plants
-bartlett.test(Plants$Result ~ Plants$WaterbodyType)
+bartlett.test(Plants$C13 ~ Plants$WaterbodyType)
 
 
   # Plant type equal variances test
-bartlett.test(Plants$Result ~ Plants$Type)
+bartlett.test(Plants$C13 ~ Plants$Type)
 
 
 # Fligner test for equal variances (another test)
-fligner.test(Plants$Result~Plants$WaterbodyType) 
-fligner.test(Plants$Result~Plants$Type) 
-
-
-
-
-
-
-### Testing the assumptions of ANOVA for Test2
-
-## Assumption #1: Experimental errors are normally distributed 
-# Shapiro-Wilks test of normality
-resids = residuals(lm(Result ~ Type2, data = FinalTurt)) # create a residuals object
-shapiro.test(resids) 
-
-
-
-## Assumption #2: Equal variance between treatments
-# Bartlett test for equal variances
-# must test for each treatment one at a time (i.e. pond/location type, then blood fraction)
-
-# Pond/location type equal variances test for turtles (culvert turtle vs. non-culvert anadromous vs. landlocked vs. uncertain)
-bartlett.test(FinalTurt$Result ~ FinalTurt$Type2)
-
-
-
-
-
-
-
-### Testing Assumptions
-# 1. Homogeneity of variances
-plot(res, 1) 
-# Levene's test
-library(car)
-leveneTest(Result ~ Type2*Type, data = subset(Isotopes, TissueType == "Turtle" & IsotopeType == "C13"))
-
-# 2. Normality
-plot(res, 2) # there are two points well off of the line. May need to remove these to avoid violating the assumption
-# Shapiro-Wilk test on residuals
-# Extract the residuals
-aov_residuals <- residuals(object = res)
-# Run Shapiro-Wilk test
-shapiro.test(x = aov_residuals ) # this fails the Shaprio-Wilk normality test, confirming those two points need to be removed.
-
-
-### Testing assumptions of ANOVA to see if we can run ANOVA on these samples
-## Assumption #1: Experimental errors are normally distributed 
-# Shapiro-Wilks test of normality
-resids = residuals(lm(Result ~ WaterbodyType + Type, data=Test1Data)) # create a residuals object
-shapiro.test(resids) 
-
-# checking sample size of other groups
-a = Test1Data %>%
-  group_by(WaterbodyType, Type) %>%
-  summarise(n = n())
-
-
-### Assumption #2: Equal variance between treatments
-## Bartlett test for equal variances
-# must test for each treatment one at a time (i.e. pond type, then plant type)
-
-# Pond type equal variances test for plants
-bartlett.test(Test1Data$Result ~ Test1Data$WaterbodyType)
-# p = 0.177, fail to reject null that variances are equal between treatments 
-
-
-# Plant type equal variances test
-bartlett.test(Test1Data$Result ~ Test1Data$Type)
-
-### Conclusion - we violate 2 assumptions of ANOVA, therefore cannot use ANOVA to compare means
+fligner.test(Plants$C13~Plants$WaterbodyType) 
+fligner.test(Plants$C13~Plants$Type) 
