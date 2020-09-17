@@ -1,6 +1,13 @@
 #####################              Counts from Video Analyses            ######################
 # this script takes observations recorded from watching underwater culvert action camera videos
 # and quantifies number of various events that occur, durations, gaps, etc.
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # set WD to folder where this script is stored
+
+# checking that all required packages are installed and installing any that are missing
+list.of.packages <- c("ggplot2", "dplyr", "readxl", "ggpubr", "Hmisc")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 
 library(dplyr)
 library(ggplot2)
@@ -271,3 +278,4 @@ res # highly significant at p < 0.0001
 # Comparing Turtle present-No attack to Turtle present-Attacked
 res2 <- prop.test(x = c(Contingency[2,1], Contingency[3,1]), n = c((Contingency[2,1]+Contingency[2,2]), (Contingency[3,1]+Contingency[3,2])))
 res2 # highly significant at p < 0.0001
+

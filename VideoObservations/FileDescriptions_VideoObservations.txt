@@ -5,9 +5,10 @@ Column definitions:
 - "VideoFileName" = file name of the video clip observed.
 - "FootageDate" = date video file was recorded
 - "Species" = abbreviation for fish taxa of this event. RH = river herring; LMB = largemouth bass; SF = sunfish; CP = chain pickerel, YP = yellow perch.
+- "Direction" = direction that the fish was swimming in, i.e. upstream or downstream.
 - "Pass" = 1 if fish passes through the culvert, 0 if it returns in the direction that it entered the culvert from.
 - "EventTime" = time of day in 24hr format that the event occurred. 
-- "TurtleAvailable" = 1 if turtle is present inside of the culvert and available to potentially strike at prey (i.e. not currently consuming previously captured prey or with head above water breathing at the time of the event).
+- "TurtleAvailable" = 1 if turtle is present inside of the culvert and available to potentially strike at prey (i.e. not currently consuming previously captured prey or with head above water breathing at the time of the event); 0 if none of these conditions are met.
 - "Attacked" = 1 if turtle attempted to attack the fish, 0 if no attempt made. 
 - "CatchSuccess" = 1 if turtle successfully captures the fish being attacked, 0 if turtle does not successfully capture fish.
 - "SchoolSize" = number of herring detected in the together in the culvert at the time of the event
@@ -20,10 +21,9 @@ Column definitions:
 Column definitions:
 - "StartTime" = date and time of the start of this record
 - "EndTime = date and time of the end of this record
-- "Event" = identifies if underwater camera was deployed (i.e. "On") or not deployed (i.e. "Off") during this time window. 
-- "TurtlesPresentBeforeStart" = number of turtles that were observed inside the culvert at the time that the camera was first deployed.
-- "TurtlesPresent" = number of turtles occupying the inside of the culvert during this time period.
-
+- "Event" = identifies if underwater camera was deployed (i.e. "On") or not deployed (i.e. "Off") during this time window, or if a turtle enters the culvert (i.e. "TurtleArrival") or exits the culvert (i.e. "TurtleDeparture") at this time.
+- "Turtles" = number of turtles occupying the inside of the culvert during this time period.
+- "ID" = a unique ID number for a given observation period. 
 
 
 
