@@ -13,7 +13,7 @@ Each file also contains the columns: Area, Mean, Min, and Max which are automica
 /Data/Normalized sub folder contains the  "FishAndCulvertCornerCoordinates_Normalized.csv".
 This is the output from "FishPositioning_SetUp_NormalizingPixelCoordinates.R" R script. 
 This data table consists of the normalized pixel coordinates of the 5 points of interest recorded from each screen captured image described above.
-Column definitions:
+Column definitions (unless otherwise specified, "NA" means "not applicable"):
 - "Name" = name of the point of interest (e.g. "TopLeft" corner of culvert, center-of-mass of "Fish").
 - "X" = normalized X-coordinate value
 - "Y" = normalized Y-coordinate value
